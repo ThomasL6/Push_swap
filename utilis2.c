@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-int position(t_list *pile)
+int pmin(t_list *pile)
 {
     int p;
     int min;
@@ -34,4 +34,28 @@ void    free_pile(t_list *pile)
         free(pile);
         pile = tmp;
     }
+}
+
+int pmax(t_list *pile)
+{
+    int p;
+    int max;
+    int i;
+    t_list *tmp;
+
+    tmp = pile;
+    p = 0;
+    i = 0;
+    max = tmp->values;
+    while(tmp)
+    {
+        if(tmp->values > max)
+        {
+            max = tmp->values;
+            p = i;
+        }
+        tmp = tmp->nxt;
+        i++;
+    }
+    return(p);
 }

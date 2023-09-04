@@ -45,7 +45,7 @@ void	do_rb(t_list **pile_b, int i)
 	(*pile_b)->nxt = NULL;
 	*pile_b = temp2;
 	if(i == 0)
-		write(1, "ra\n", 3);
+		write(1, "rb\n", 3);
 }
 
 void	do_rr(t_list **pile_a, t_list **pile_b)

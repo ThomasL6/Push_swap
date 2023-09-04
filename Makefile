@@ -22,12 +22,11 @@ FICHIERS_C = pile.c\
 	     alg2.c\
 	     algo_3_6.c\
 	     algo100.c\
-	     algorythm.c\
 
 
 OBJS = $(patsubst %.c,%.o,$(FICHIERS_C))
 
-CFLAGS= -Wall -Wextra -Werror -g
+CFLAGS= -Wall -Werror -Wextra -g
 
 CC = cc
 ${NAME} : ${OBJS} 

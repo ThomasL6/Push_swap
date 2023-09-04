@@ -16,7 +16,7 @@ void	pile_de_3(t_list **pile_a, t_list **pile_b)
 	int p;
 	while(lst_size(*pile_a) > 3)
 	{
-		p = position(*pile_a);
+		p = pmin(*pile_a);
 		if(p == 0)
 			do_pb(pile_a, pile_b);
 		else if(p >= 1 && p <= 2)

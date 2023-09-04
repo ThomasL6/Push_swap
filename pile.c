@@ -41,3 +41,17 @@ void   afficher(t_list *pile)
     }
     write(1, "\n", 1);
 }
+
+int sort(t_list *pile_a)
+{
+	t_list *swp;
+
+	while(pile_a && pile_a->nxt)
+	{
+		swp = pile_a->nxt;
+		if(swp->values < pile_a->values)
+			return(0);
+		pile_a = pile_a->nxt;
+	}
+	return(1);
+}

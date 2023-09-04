@@ -39,9 +39,10 @@ int  main(int arg, char **tab)
 			algo3(&pile_a);
 		else if(lst_size(pile_a) <= 5)
 			algo_5(&pile_a, &pile_b);
-		// do_pb(&pile_a, &pile_b);
-		// afficher(pile_a);
-		// printf("\n");
-		// afficher(pile_b);
+		else if (lst_size(pile_a) <= 100)
+			algo100(&pile_a, &pile_b, 5);
+		else
+			algo100(&pile_a, &pile_b, 11);
+		
 	}
 }
