@@ -22,8 +22,11 @@ typedef struct s_list
 	void	*nxt;
 }		t_list;
 
-t_list	list_size(t_list *pile);
+t_list  *last_value(t_list *pile);
+int	lst_size(t_list *pile);
 int	ft_atoil(const char *nptr);
+int	trier(t_list *pile_a);
+int position(t_list *pile);
 void  empiler(t_list **pile, int newvalue);
 void   afficher(t_list *pile);
 void	do_pa(t_list **pile_a, t_list **pile_b);
@@ -39,8 +42,9 @@ void	do_rrb(t_list **pile_b, int i);
 void	do_rrr(t_list **pile_a, t_list **pile_b);
 void	doubles(char **tab);
 void	verifier(int arg, char **tab);
-void	trier(t_list *pile_a);
 void    algo3(t_list **pile_a);
-void    algo3_b(t_list **pile_b);
-
+void    algo3_b(t_list *pile_b);
+void    algo2(t_list **pile_a);
+void	algo_5(t_list **pile_a, t_list **pile_b);
+void    free_pile(t_list *pile);
 #endif

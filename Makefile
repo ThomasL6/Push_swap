@@ -18,11 +18,16 @@ FICHIERS_C = pile.c\
 	     swap.c\
 	     rotate.c\
 	     rrotate.c\
+	     algo_3_6.c\
+	     alg2.c\
+		 free.c\
+		 utilis2.c\
+	     algorythm.c\
 
 
 OBJS = $(patsubst %.c,%.o,$(FICHIERS_C))
 
-CFLAGS= -Wall -Wextra -Werror
+CFLAGS= -Wall -Wextra -Werror -g
 
 CC = cc
 ${NAME} : ${OBJS} 

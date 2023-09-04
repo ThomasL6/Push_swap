@@ -13,19 +13,16 @@
 
 void	pile_de_3(t_list **pile_a, t_list **pile_b)
 {
-	t_list	*list;
-
-	while (trier(*pile_a) == 1|| (*pile_b))
+	int p;
+	while(lst_size(*pile_a) > 3)
 	{
-		last_element = list_size(*pile_a);
-		if (list->values < 4)
-			do_rra(*pile_a);
-		if ((*pile_a)->values < 4)
-			do_pb(*pile_a, *pile_b);
-		else
-			do_ra(*pile_a);
-		if (list_size(*pile_b) == 3)
-			break;
+		p = position(*pile_a);
+		if(p == 0)
+			do_pb(pile_a, pile_b);
+		else if(p >= 1 && p <= 2)
+			do_ra(pile_a, 0);
+		else if(p >= 3)
+			do_rra(pile_a, 0);
 	}
 }
 
@@ -35,7 +32,7 @@ void    algo3(t_list **pile_a)
 	t_list  *last;
 
 	mid = (*pile_a)->nxt;
-	if(list_size(*pile_a) == 2 && (*pile_a)->values > mid-> values)
+	if(lst_size(*pile_a) == 2 && (*pile_a)->values > mid-> values)
 		write(1, "sa\n", 3);
 	last = *pile_a;
 	while(last->nxt)
@@ -52,36 +49,39 @@ void    algo3(t_list **pile_a)
 		write(1, "ra\n", 3);
 }
 
-void    algo3_b(t_list *pile_b)
-{
-	t_list  *mid;
-	t_list  *last;
+// void	cas_particulier(t_list **pile_a, t_list **pile_b)
+// {
+// 	t_list	*mid_a;
+// 	t_list	*last_a;
+// 	t_list	*mid_b;
+// 	t_list	*last_b;
 
-	mid = pile_b->nxt;
-	last = pile_b;
-	while (last->nxt)
-		last = last->nxt;
-	if (b->values > last->values && last->values > mid->values)
-		write(1, "rrb\nsb\n", 7);
-	else if (mid->values > last->values && last->values > b->values)
-		write(1, "rb\n", 3);
-	else if (mid->values > b->values && b->values > last->values)
-		write(1, "sb\n", 3);
-	else if (last->values > mid->values && mid->values > b->values)
-		write(1, "sb\nrrb\n", 7);
-	else if (last->values > b->values && b->values > mid->values)
-		write(1, "rrb\n", 4);
-}
+// 	mid_a = (*pile_a)->nxt;
+// 	mid_b = (*pile_b)->nxt;
+// 	last_a = *pile_a;
+// 	last_b = *pile_b;
+// 	while(last_a->nxt)
+// 		last_a = last_a->nxt;
+// 	while(last_b->nxt)
+// 		last_b = last_b->nxt;
+// 	if(((*pile_b)->nxt > mid_b->nxt && mid_b->nxt > last_b->nxt)
+// 		|| (last_b->nxt > mid_b->nxt && mid_b->nxt > (*pile_b)->nxt))
+// 	{
+// 		if(((*pile_a)->nxt > mid_a->nxt && mid_a->nxt > last_a->nxt)
+// 			|| (last_a->nxt > mid_a->nxt && mid_a->nxt > (*pile_a)->nxt))
+// 		{
+// 			// write(1, "rrr\nss\npa\npa\npa\n", 16);
+// 			exit(0);
+// 		}
+// 	}
+// }
 
-void	algo_6(t_list **pile_a, t_list **pile_b)
+void	algo_5(t_list **pile_a, t_list **pile_b)
 {
 	pile_de_3(pile_a, pile_b);
-	if(trier(*pile_a) == 0 && !(*pile_b))
-		return;
-	if((*pile_a)->nxt)
-	{
 		algo3(pile_a);
-		algo3_b(pile_b);
-		write(1, "pa\npa\npa\n", 9);
-	}
+		if(trier(*pile_b) == 1)
+			do_rb(pile_b, 0);
+		while(lst_size(*pile_b) > 0)
+			do_pa(pile_a, pile_b);
 }

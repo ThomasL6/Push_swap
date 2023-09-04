@@ -1,38 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algorythm.c                                        :+:      :+:    :+:   */
+/*   alg2.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thlefebv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/28 16:01:01 by thlefebv          #+#    #+#             */
-/*   Updated: 2023/07/28 16:01:03 by thlefebv         ###   ########.fr       */
+/*   Created: 2023/08/31 11:02:07 by thlefebv          #+#    #+#             */
+/*   Updated: 2023/08/31 11:02:08 by thlefebv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
 
-int trier(t_list *pile_a)
+void    algo2(t_list **pile_a)
 {
-	t_list *swp;
-
-	while(pile_a && pile_a->nxt)
-	{
-		swp = pile_a->nxt;
-		if(swp->values < pile_a->values)
-			return(0);
-		pile_a = pile_a->nxt;
-	}
-	return(1);
-}
-
-void	algorythm(t_list **pile_a, t_list **pile_b, int len)
-{
-	if(trier(*pile_a) == 0)
-		return;
-	else if (len == 2)
-		algo2(pile_a);
-	else if (len == 3)
-		algo3(pile_a);
-	else if (len <= 5)
-		algo_5(pile_a, pile_b);
+    t_list *last;
+    last = (*pile_a)->nxt;
+    if(last->values < (*pile_a)->values)
+        write(1, "ra\n", 3);
 }

@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algorythm.c                                        :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thlefebv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/28 16:01:01 by thlefebv          #+#    #+#             */
-/*   Updated: 2023/07/28 16:01:03 by thlefebv         ###   ########.fr       */
+/*   Created: 2023/08/31 11:33:57 by thlefebv          #+#    #+#             */
+/*   Updated: 2023/08/31 11:33:59 by thlefebv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
 
-int trier(t_list *pile_a)
+void    free_pile(t_list *pile)
 {
-	t_list *swp;
+    t_list *tmp;
 
-	while(pile_a && pile_a->nxt)
-	{
-		swp = pile_a->nxt;
-		if(swp->values < pile_a->values)
-			return(0);
-		pile_a = pile_a->nxt;
-	}
-	return(1);
-}
-
-void	algorythm(t_list **pile_a, t_list **pile_b, int len)
-{
-	if(trier(*pile_a) == 0)
-		return;
-	else if (len == 2)
-		algo2(pile_a);
-	else if (len == 3)
-		algo3(pile_a);
-	else if (len <= 5)
-		algo_5(pile_a, pile_b);
+    tmp = pile;
+    while(pile)
+    {
+        tmp = pile->nxt;
+        free(pile);
+        pile = tmp;
+    }
 }

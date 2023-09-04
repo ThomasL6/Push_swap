@@ -25,20 +25,23 @@ int  main(int arg, char **tab)
 		pile_a = malloc(sizeof (t_list));
 		pile_b = malloc(sizeof (t_list));
 		pile_a->values = ft_atoil(tab[1]);
-		pile_b->values = ft_atoil(tab[1]);
+		pile_b = NULL;
 		while(i != arg)
 		{
 			empiler(&pile_a, ft_atoil(tab[i]));
-			empiler(&pile_b, ft_atoil(tab[i]));
 			i++;
 		}
 		verifier(arg, tab);
-		printf("affichage pile_a : \n");
-		afficher(pile_a);
-		afficher(pile_b);
-		printf("//////\n");
-		do_pa(&pile_a, &pile_b);
-		afficher(pile_a);
-		afficher(pile_b);
+		
+		if (lst_size(pile_a) == 2)
+			algo2(&pile_a);
+		else if(lst_size(pile_a) == 3)
+			algo3(&pile_a);
+		else if(lst_size(pile_a) <= 5)
+			algo_5(&pile_a, &pile_b);
+		// do_pb(&pile_a, &pile_b);
+		// afficher(pile_a);
+		// printf("\n");
+		// afficher(pile_b);
 	}
 }

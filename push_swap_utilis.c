@@ -102,3 +102,15 @@ int	lst_size(t_list *pile)
 	}
 	return (i);
 }
+
+t_list  *last_value(t_list *pile)
+{
+    t_list *swap;
+
+    swap = pile;
+    while(swap && swap->nxt)
+    {
+        swap = swap->nxt;
+    }
+    return(swap);
+}
