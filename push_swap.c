@@ -28,10 +28,10 @@ int  main(int arg, char **tab)
 		pile_b = NULL;
 		while(i != arg)
 		{
-			empiler(&pile_a, ft_atoil(tab[i]));
+			stack(&pile_a, ft_atoil(tab[i]));
 			i++;
 		}
-		verifier(arg, tab);
+		verification(arg, tab);
 		
 		if (lst_size(pile_a) == 2)
 			algo2(&pile_a);

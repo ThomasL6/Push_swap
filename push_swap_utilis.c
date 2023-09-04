@@ -58,7 +58,7 @@ void	doubles(char **tab)
 	}
 }
 
-void	verifier(int arg, char **tab)
+void	verification(int arg, char **tab)
 {
 	int i;
 	int j;

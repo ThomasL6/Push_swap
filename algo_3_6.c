@@ -49,38 +49,11 @@ void    algo3(t_list **pile_a)
 		write(1, "ra\n", 3);
 }
 
-// void	cas_particulier(t_list **pile_a, t_list **pile_b)
-// {
-// 	t_list	*mid_a;
-// 	t_list	*last_a;
-// 	t_list	*mid_b;
-// 	t_list	*last_b;
-
-// 	mid_a = (*pile_a)->nxt;
-// 	mid_b = (*pile_b)->nxt;
-// 	last_a = *pile_a;
-// 	last_b = *pile_b;
-// 	while(last_a->nxt)
-// 		last_a = last_a->nxt;
-// 	while(last_b->nxt)
-// 		last_b = last_b->nxt;
-// 	if(((*pile_b)->nxt > mid_b->nxt && mid_b->nxt > last_b->nxt)
-// 		|| (last_b->nxt > mid_b->nxt && mid_b->nxt > (*pile_b)->nxt))
-// 	{
-// 		if(((*pile_a)->nxt > mid_a->nxt && mid_a->nxt > last_a->nxt)
-// 			|| (last_a->nxt > mid_a->nxt && mid_a->nxt > (*pile_a)->nxt))
-// 		{
-// 			// write(1, "rrr\nss\npa\npa\npa\n", 16);
-// 			exit(0);
-// 		}
-// 	}
-// }
-
 void	algo_5(t_list **pile_a, t_list **pile_b)
 {
 	pile_de_3(pile_a, pile_b);
 		algo3(pile_a);
-		if(trier(*pile_b) == 1)
+		if(sort(*pile_b) == 1)
 			do_rb(pile_b, 0);
 		while(lst_size(*pile_b) > 0)
 			do_pa(pile_a, pile_b);

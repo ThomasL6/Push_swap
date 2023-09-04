@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
-void empiler(t_list** pile, int newvalue)
+void stack(t_list** pile, int newvalue)
 {
     t_list *newpile;
     newpile = malloc(sizeof *newpile);

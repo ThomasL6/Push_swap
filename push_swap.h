@@ -22,13 +22,13 @@ typedef struct s_list
 	void	*nxt;
 }		t_list;
 
-t_list  *last_value(t_list *pile);
+t_list	*last_value(t_list *pile);
 int	lst_size(t_list *pile);
 int	ft_atoil(const char *nptr);
-int	trier(t_list *pile_a);
-int position(t_list *pile);
-void  empiler(t_list **pile, int newvalue);
-void   afficher(t_list *pile);
+int	sort(t_list *pile_a);
+int	position(t_list *pile);
+void	stack(t_list **pile, int newvalue);
+void	afficher(t_list *pile);
 void	do_pa(t_list **pile_a, t_list **pile_b);
 void	do_pb(t_list **pile_a, t_list **pile_b);
 void	do_sa(t_list **pile_a, int i);
@@ -41,10 +41,11 @@ void	do_rra(t_list **pile_a, int i);
 void	do_rrb(t_list **pile_b, int i);
 void	do_rrr(t_list **pile_a, t_list **pile_b);
 void	doubles(char **tab);
-void	verifier(int arg, char **tab);
-void    algo3(t_list **pile_a);
-void    algo3_b(t_list *pile_b);
+void	verification(int arg, char **tab);
 void    algo2(t_list **pile_a);
+void    algo3(t_list **pile_a);
 void	algo_5(t_list **pile_a, t_list **pile_b);
+void	pile_de_3(t_list **pile_a, t_list **pile_b);
+void    pile20(t_list **pile_a, t_list **pile_b, int min, int max);
 void    free_pile(t_list *pile);
 #endif

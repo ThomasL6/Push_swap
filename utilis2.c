@@ -23,3 +23,15 @@ int position(t_list *pile)
     }
     return(p);
 }
+void    free_pile(t_list *pile)
+{
+    t_list *tmp;
+
+    tmp = pile;
+    while(pile)
+    {
+        tmp = pile->nxt;
+        free(pile);
+        pile = tmp;
+    }
+}

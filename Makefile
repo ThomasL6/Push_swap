@@ -12,16 +12,16 @@
 NAME = push_swap
 
 FICHIERS_C = pile.c\
-	     push_swap_utilis.c\
 	     push_swap.c\
+	     push_swap_utilis.c\
+	     utilis2.c\
 	     push.c\
 	     swap.c\
 	     rotate.c\
 	     rrotate.c\
-	     algo_3_6.c\
 	     alg2.c\
-		 free.c\
-		 utilis2.c\
+	     algo_3_6.c\
+	     algo100.c\
 	     algorythm.c\
 
 

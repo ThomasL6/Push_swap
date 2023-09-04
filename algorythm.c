@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
-int trier(t_list *pile_a)
+int sort(t_list *pile_a)
 {
 	t_list *swp;
 
@@ -27,7 +27,7 @@ int trier(t_list *pile_a)
 
 void	algorythm(t_list **pile_a, t_list **pile_b, int len)
 {
-	if(trier(*pile_a) == 0)
+	if(sort(*pile_a) == 0)
 		return;
 	else if (len == 2)
 		algo2(pile_a);
