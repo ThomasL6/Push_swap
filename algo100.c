@@ -81,7 +81,7 @@ void	algo100_2(t_list **pile_a, t_list **pile_b, int p)
 {
 	while (lst_size(*pile_b) > 0)
 	{
-		p = pmax(*pile_b);
+		p = vmax(*pile_b);
 		if (p == 0)
 			do_pa(pile_a, pile_b);
 		else if (p <= lst_size(*pile_b) / 2)

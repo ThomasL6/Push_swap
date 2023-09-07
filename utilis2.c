@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int	pmin(t_list *pile)
+int	vmin(t_list *pile)
 {
 	int		p;
 	int		min;
@@ -36,7 +36,7 @@ int	pmin(t_list *pile)
 	return (p);
 }
 
-void	free_pile(t_list *pile)
+void	free_stack(t_list *pile)
 {
 	t_list	*tmp;
 
@@ -49,7 +49,7 @@ void	free_pile(t_list *pile)
 	}
 }
 
-int	pmax(t_list *pile)
+int	vmax(t_list *pile)
 {
 	int		p;
 	int		max;
@@ -71,4 +71,16 @@ int	pmax(t_list *pile)
 		i++;
 	}
 	return (p);
+}
+
+t_list	*last_value(t_list *pile)
+{
+	t_list	*swap;
+
+	swap = pile;
+	while (swap && swap->nxt)
+	{
+		swap = swap->nxt;
+	}
+	return (swap);
 }

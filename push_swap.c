@@ -14,7 +14,9 @@
 void	algorythm(t_list **pile_a, t_list **pile_b, int len)
 {
 	len = lst_size(*pile_a);
-	if (lst_size(*pile_a) == 2)
+    if (lst_size(*pile_a) == 1)
+        return ;
+	else if (lst_size(*pile_a) == 2)
 		algo2(pile_a);
 	else if (lst_size(*pile_a) == 3)
 		algo3(pile_a);
@@ -24,7 +26,7 @@ void	algorythm(t_list **pile_a, t_list **pile_b, int len)
 		algo100(pile_a, pile_b, 5);
 	else
 		algo100(pile_a, pile_b, 11);
-	free_pile(*pile_a);
+	free_stack(*pile_a);
 }
 
 int	main(int arg, char **tab)
@@ -48,6 +50,7 @@ int	main(int arg, char **tab)
 			i++;
 		}
 		verification(arg, tab);
+        check(tab);
 		algorythm(&pile_a, &pile_b, lst_size(pile_a));
 	}
 }

@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
-int	ft_atoil(const char *nptr)
+long int	ft_atoil(const char *nptr)
 {
 	int			i;
 	int			mu;
@@ -53,6 +53,22 @@ void	doubles(char **tab)
 				exit(0);
 			}
 			j++;
+		}
+		i++;
+	}
+}
+
+void	check(char **tab)
+{
+	int	i;
+
+	i = 1;
+	while (tab[i])
+	{
+		while (tab[i] < tab[i + 1])
+		{
+			if (tab[1][i] == '\0')
+				exit(0);
 		}
 		i++;
 	}
@@ -100,16 +116,4 @@ int	lst_size(t_list *pile)
 		i++;
 	}
 	return (i);
-}
-
-t_list	*last_value(t_list *pile)
-{
-	t_list	*swap;
-
-	swap = pile;
-	while (swap && swap->nxt)
-	{
-		swap = swap->nxt;
-	}
-	return (swap);
 }
