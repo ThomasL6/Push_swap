@@ -13,48 +13,51 @@
 
 void	pile_de_3(t_list **pile_a, t_list **pile_b)
 {
-	int p;
-	while(lst_size(*pile_a) > 3)
+	int	p;
+
+	while (lst_size(*pile_a) > 3)
 	{
 		p = pmin(*pile_a);
-		if(p == 0)
+		if (p == 0)
 			do_pb(pile_a, pile_b);
-		else if(p >= 1 && p <= 2)
+		else if (p >= 1 && p <= 2)
 			do_ra(pile_a, 0);
-		else if(p >= 3)
+		else if (p >= 3)
 			do_rra(pile_a, 0);
 	}
 }
 
-void    algo3(t_list **pile_a)
+void	algo3(t_list **pile_a)
 {
-	t_list  *mid;
-	t_list  *last;
+	t_list	*mid;
+	t_list	*last;
 
 	mid = (*pile_a)->nxt;
-	if(lst_size(*pile_a) == 2 && (*pile_a)->values > mid-> values)
+	if (lst_size(*pile_a) == 2 && (*pile_a)->values > mid-> values)
 		write(1, "sa\n", 3);
 	last = *pile_a;
-	while(last->nxt)
+	while (last->nxt)
 		last = last->nxt;
-	if((*pile_a)->values > mid->values && mid->values > last->values)
+	if ((*pile_a)->values > mid->values && mid->values > last->values)
 		write(1, "sa\nrra\n", 7);
-	else if(mid->values > last->values && last->values > (*pile_a)->values)
+	else if (mid->values > last->values && last->values > (*pile_a)->values)
 		write(1, "rra\nsa\n", 7);
-	else if(mid->values > (*pile_a)->values && (*pile_a)->values > last->values)
+	else if (mid->values > (*pile_a)->values 
+		&& (*pile_a)->values > last->values)
 		write(1, "rra\n", 3);
-	else if(last->values > (*pile_a)->values && (*pile_a)->values > mid->values)
+	else if (last->values > (*pile_a)->values 
+		&& (*pile_a)->values > mid->values)
 		write(1, "sa\n", 3);
-	else if((*pile_a)->values > last->values && last->values > mid->values)
+	else if ((*pile_a)->values > last->values && last->values > mid->values)
 		write(1, "ra\n", 3);
 }
 
 void	algo_5(t_list **pile_a, t_list **pile_b)
 {
 	pile_de_3(pile_a, pile_b);
-		algo3(pile_a);
-		if(sort(*pile_b) == 1)
-			do_rb(pile_b, 0);
-		while(lst_size(*pile_b) > 0)
-			do_pa(pile_a, pile_b);
+	algo3(pile_a);
+	if (sort(*pile_b) == 1)
+		do_rb(pile_b, 0);
+	while (lst_size(*pile_b) > 0)
+		do_pa(pile_a, pile_b);
 }

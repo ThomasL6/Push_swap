@@ -13,9 +13,9 @@
 
 int	ft_atoil(const char *nptr)
 {
-	int	i;
+	int			i;
+	int			mu;
 	long int	nb;
-	int	mu;
 
 	mu = 1;
 	i = 0;
@@ -38,16 +38,16 @@ int	ft_atoil(const char *nptr)
 
 void	doubles(char **tab)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 1;
-	while(tab[i])
+	while (tab[i])
 	{
 		j = i + 1;
-		while(tab[j])
+		while (tab[j])
 		{
-			if(ft_atoil(tab[i]) == ft_atoil(tab[j]))
+			if (ft_atoil(tab[i]) == ft_atoil(tab[j]))
 			{
 				write(1, "Error\n", 6);
 				exit(0);
@@ -60,17 +60,17 @@ void	doubles(char **tab)
 
 void	verification(int arg, char **tab)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	j = 1;
 	doubles(tab);
-	while(j < arg)
+	while (j < arg)
 	{
 		i = 0;
-		while(tab[j][i])
+		while (tab[j][i])
 		{
-			if(tab[j][i] != '-'  && tab[j][i] != '+'
+			if (tab[j][i] != '-' && tab[j][i] != '+'
 				&& !(tab[j][i] >= '0' && tab[j][i] <= '9'))
 			{
 				write(1, "Error\n", 6);
@@ -78,7 +78,7 @@ void	verification(int arg, char **tab)
 			}
 			i++;
 		}
-		if(ft_atoil(tab[j]) < -2147483648 || ft_atoil(tab[j]) > 2147483647)
+		if (ft_atoil(tab[j]) < -2147483648 || ft_atoil(tab[j]) > 2147483647)
 		{
 			write(1, "Error\n", 6);
 			exit(0);
@@ -86,7 +86,6 @@ void	verification(int arg, char **tab)
 		j++;
 	}
 }
-
 
 int	lst_size(t_list *pile)
 {
@@ -103,14 +102,14 @@ int	lst_size(t_list *pile)
 	return (i);
 }
 
-t_list  *last_value(t_list *pile)
+t_list	*last_value(t_list *pile)
 {
-    t_list *swap;
+	t_list	*swap;
 
-    swap = pile;
-    while(swap && swap->nxt)
-    {
-        swap = swap->nxt;
-    }
-    return(swap);
+	swap = pile;
+	while (swap && swap->nxt)
+	{
+		swap = swap->nxt;
+	}
+	return (swap);
 }

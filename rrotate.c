@@ -26,7 +26,7 @@ void	do_rra(t_list **pile_a, int i)
 	temp->nxt = NULL;
 	cell->nxt = *pile_a;
 	*pile_a = cell;
-	if(i == 0)
+	if (i == 0)
 		write(1, "rra\n", 4);
 }
 
@@ -45,7 +45,7 @@ void	do_rrb(t_list **pile_b, int i)
 	temp->nxt = NULL;
 	cell->nxt = *pile_b;
 	*pile_b = cell;
-	if(i == 0)
+	if (i == 0)
 		write(1, "rrb\n", 4);
 }
 

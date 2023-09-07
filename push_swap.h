@@ -18,17 +18,17 @@
 
 typedef struct s_list
 {
-	long int		values;
-	void	*nxt;
+	long int	values;
+	void		*nxt;
 }		t_list;
 
 t_list	*last_value(t_list *pile);
-int	lst_size(t_list *pile);
-int	ft_atoil(const char *nptr);
-int	sort(t_list *pile_a);
-int	pmin(t_list *pile);
-int pmax(t_list *pile);
-int	run(int i, int min, int max, t_list *pile);
+int		lst_size(t_list *pile);
+int		ft_atoil(const char *nptr);
+int		sort(t_list *pile_a);
+int		pmin(t_list *pile);
+int		pmax(t_list *pile);
+int		run(int i, int min, int max, t_list *pile);
 void	stack(t_list **pile, int newvalue);
 void	afficher(t_list *pile);
 void	do_pa(t_list **pile_a, t_list **pile_b);
@@ -44,11 +44,12 @@ void	do_rrb(t_list **pile_b, int i);
 void	do_rrr(t_list **pile_a, t_list **pile_b);
 void	doubles(char **tab);
 void	verification(int arg, char **tab);
-void    algo2(t_list **pile_a);
-void    algo3(t_list **pile_a);
+void	algo2(t_list **pile_a);
+void	algo3(t_list **pile_a);
 void	algo_5(t_list **pile_a, t_list **pile_b);
-void    algo100(t_list **pile_a, t_list **pile_b, int stacks);
+void	algo100(t_list **pile_a, t_list **pile_b, int stacks);
 void	pile_de_3(t_list **pile_a, t_list **pile_b);
-void    pile20(t_list **pile_a, t_list **pile_b, int min, int max);
-void    free_pile(t_list *pile);
+void	pile20(t_list **pile_a, t_list **pile_b, int min, int max);
+void	free_pile(t_list *pile);
+
 #endif

@@ -11,7 +11,7 @@
 # **************************************************************************** #
 NAME = push_swap
 
-FICHIERS_C = pile.c\
+FICHIERS_C = stack.c\
 	     push_swap.c\
 	     push_swap_utilis.c\
 	     utilis2.c\
@@ -20,7 +20,7 @@ FICHIERS_C = pile.c\
 	     rotate.c\
 	     rrotate.c\
 	     alg2.c\
-	     algo_3_6.c\
+	     algo_3_5.c\
 	     algo100.c\
 
 

@@ -11,22 +11,21 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
-
 void	do_ra(t_list **pile_a, int i)
 {
 	t_list	*temp;
 	t_list	*temp2;
 
-	if(!*pile_a || !(*pile_a)->nxt)
-		return;
+	if (!*pile_a || !(*pile_a)->nxt)
+		return ;
 	temp = (*pile_a);
 	temp2 = (*pile_a)->nxt;
-	while(temp->nxt)
+	while (temp->nxt)
 		temp = temp->nxt;
 	temp->nxt = *pile_a;
 	(*pile_a)->nxt = NULL;
 	*pile_a = temp2;
-	if(i == 0)
+	if (i == 0)
 		write(1, "ra\n", 3);
 }
 
@@ -35,16 +34,16 @@ void	do_rb(t_list **pile_b, int i)
 	t_list	*temp;
 	t_list	*temp2;
 
-	if(!*pile_b || !(*pile_b)->nxt)
-		return;
+	if (!*pile_b || !(*pile_b)->nxt)
+		return ;
 	temp = (*pile_b);
 	temp2 = (*pile_b)->nxt;
-	while(temp->nxt)
+	while (temp->nxt)
 		temp = temp->nxt;
 	temp->nxt = *pile_b;
 	(*pile_b)->nxt = NULL;
 	*pile_b = temp2;
-	if(i == 0)
+	if (i == 0)
 		write(1, "rb\n", 3);
 }
 

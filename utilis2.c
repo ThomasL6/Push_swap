@@ -1,61 +1,74 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utilis2.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: thlefebv <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/07 09:36:57 by thlefebv          #+#    #+#             */
+/*   Updated: 2023/09/07 09:37:01 by thlefebv         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-int pmin(t_list *pile)
+int	pmin(t_list *pile)
 {
-    int p;
-    int min;
-    int i;
-    t_list *tmp;
+	int		p;
+	int		min;
+	int		i;
+	t_list	*tmp;
 
-    tmp = pile;
-    p = 0;
-    i = 0;
-    min = tmp->values;
-    while(tmp)
-    {
-        if(tmp->values < min)
-        {
-            min = tmp->values;
-            p = i;
-        }
-        tmp = tmp->nxt;
-        i++;
-    }
-    return(p);
-}
-void    free_pile(t_list *pile)
-{
-    t_list *tmp;
-
-    tmp = pile;
-    while(pile)
-    {
-        tmp = pile->nxt;
-        free(pile);
-        pile = tmp;
-    }
+	tmp = pile;
+	p = 0;
+	i = 0;
+	min = tmp->values;
+	while (tmp)
+	{
+		if (tmp->values < min)
+		{
+			min = tmp->values;
+			p = i;
+		}
+		tmp = tmp->nxt;
+		i++;
+	}
+	return (p);
 }
 
-int pmax(t_list *pile)
+void	free_pile(t_list *pile)
 {
-    int p;
-    int max;
-    int i;
-    t_list *tmp;
+	t_list	*tmp;
 
-    tmp = pile;
-    p = 0;
-    i = 0;
-    max = tmp->values;
-    while(tmp)
-    {
-        if(tmp->values > max)
-        {
-            max = tmp->values;
-            p = i;
-        }
-        tmp = tmp->nxt;
-        i++;
-    }
-    return(p);
+	tmp = pile;
+	while (pile)
+	{
+		tmp = pile->nxt;
+		free(pile);
+		pile = tmp;
+	}
+}
+
+int	pmax(t_list *pile)
+{
+	int		p;
+	int		max;
+	int		i;
+	t_list	*tmp;
+
+	tmp = pile;
+	p = 0;
+	i = 0;
+	max = tmp->values;
+	while (tmp)
+	{
+		if (tmp->values > max)
+		{
+			max = tmp->values;
+			p = i;
+		}
+		tmp = tmp->nxt;
+		i++;
+	}
+	return (p);
 }

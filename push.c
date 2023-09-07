@@ -15,8 +15,8 @@ void	do_pa(t_list **pile_a, t_list **pile_b)
 {
 	t_list	*tmp;
 
-	if(!*pile_b)
-		return;
+	if (!*pile_b)
+		return ;
 	tmp = (*pile_b)->nxt;
 	(*pile_b)->nxt = *pile_a;
 	*pile_a = *pile_b;
@@ -28,8 +28,8 @@ void	do_pb(t_list **pile_a, t_list **pile_b)
 {
 	t_list	*tmp;
 
-	if(!*pile_a)
-		return;
+	if (!*pile_a)
+		return ;
 	tmp = (*pile_a)->nxt;
 	(*pile_a)->nxt = *pile_b;
 	*pile_b = *pile_a;

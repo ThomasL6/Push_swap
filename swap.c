@@ -15,13 +15,13 @@ void	do_sa(t_list **pile_a, int i)
 {
 	t_list	*swap;
 
-	if(!*pile_a || !(*pile_a)->nxt)
-		return;
+	if (!*pile_a || !(*pile_a)->nxt)
+		return ;
 	swap = (*pile_a)->nxt;
 	(*pile_a)->nxt = swap->nxt;
 	swap->nxt = (*pile_a);
 	(*pile_a) = swap;
-	if(i == 0)
+	if (i == 0)
 		write(1, "sa\n", 3);
 }
 
@@ -29,13 +29,13 @@ void	do_sb(t_list **pile_b, int i)
 {
 	t_list	*swap;
 
-	if(!*pile_b || !(*pile_b)->nxt)
-		return;
+	if (!*pile_b || !(*pile_b)->nxt)
+		return ;
 	swap = (*pile_b)->nxt;
 	(*pile_b)->nxt = swap->nxt;
 	swap->nxt = (*pile_b);
 	(*pile_b) = swap;
-	if(i == 0)
+	if (i == 0)
 		write(1, "sb\n", 3);
 }
 

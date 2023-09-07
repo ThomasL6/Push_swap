@@ -11,38 +11,43 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
-int  main(int arg, char **tab)
+void	algorythm(t_list **pile_a, t_list **pile_b, int len)
 {
-	int i;
+	len = lst_size(*pile_a);
+	if (lst_size(*pile_a) == 2)
+		algo2(pile_a);
+	else if (lst_size(*pile_a) == 3)
+		algo3(pile_a);
+	else if (lst_size(*pile_a) <= 5)
+		algo_5(pile_a, pile_b);
+	else if (lst_size(*pile_a) <= 100)
+		algo100(pile_a, pile_b, 5);
+	else
+		algo100(pile_a, pile_b, 11);
+	free_pile(*pile_a);
+}
+
+int	main(int arg, char **tab)
+{
+	int		i;
+	t_list	*pile_a;
+	t_list	*pile_b;
 
 	i = 2;
-	t_list  *pile_a;
-	t_list  *pile_b;
-	if(arg == 1)
-	       return(0);
+	if (arg == 1)
+		return (0);
 	else
 	{
 		pile_a = malloc(sizeof (t_list));
-		pile_b = malloc(sizeof (t_list));
 		pile_a->values = ft_atoil(tab[1]);
+		pile_a->nxt = NULL;
 		pile_b = NULL;
-		while(i != arg)
+		while (i != arg)
 		{
 			stack(&pile_a, ft_atoil(tab[i]));
 			i++;
 		}
 		verification(arg, tab);
-		
-		if (lst_size(pile_a) == 2)
-			algo2(&pile_a);
-		else if(lst_size(pile_a) == 3)
-			algo3(&pile_a);
-		else if(lst_size(pile_a) <= 5)
-			algo_5(&pile_a, &pile_b);
-		else if (lst_size(pile_a) <= 100)
-			algo100(&pile_a, &pile_b, 5);
-		else
-			algo100(&pile_a, &pile_b, 11);
-		
+		algorythm(&pile_a, &pile_b, lst_size(pile_a));
 	}
 }
