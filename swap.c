@@ -11,37 +11,37 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
-void	do_sa(t_list **pile_a, int i)
+void	do_sa(t_list **stack_a, int i)
 {
 	t_list	*swap;
 
-	if (!*pile_a || !(*pile_a)->nxt)
+	if (!*stack_a || !(*stack_a)->nxt)
 		return ;
-	swap = (*pile_a)->nxt;
-	(*pile_a)->nxt = swap->nxt;
-	swap->nxt = (*pile_a);
-	(*pile_a) = swap;
+	swap = (*stack_a)->nxt;
+	(*stack_a)->nxt = swap->nxt;
+	swap->nxt = (*stack_a);
+	(*stack_a) = swap;
 	if (i == 0)
 		write(1, "sa\n", 3);
 }
 
-void	do_sb(t_list **pile_b, int i)
+void	do_sb(t_list **stack_b, int i)
 {
 	t_list	*swap;
 
-	if (!*pile_b || !(*pile_b)->nxt)
+	if (!*stack_b || !(*stack_b)->nxt)
 		return ;
-	swap = (*pile_b)->nxt;
-	(*pile_b)->nxt = swap->nxt;
-	swap->nxt = (*pile_b);
-	(*pile_b) = swap;
+	swap = (*stack_b)->nxt;
+	(*stack_b)->nxt = swap->nxt;
+	swap->nxt = (*stack_b);
+	(*stack_b) = swap;
 	if (i == 0)
 		write(1, "sb\n", 3);
 }
 
-void	do_ss(t_list **pile_a, t_list **pile_b)
+void	do_ss(t_list **stack_a, t_list **stack_b)
 {
-	do_sa(pile_a, 1);
-	do_sb(pile_b, 1);
+	do_sa(stack_a, 1);
+	do_sb(stack_b, 1);
 	write(1, "ss\n", 3);
 }

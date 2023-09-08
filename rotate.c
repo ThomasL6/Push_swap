@@ -11,45 +11,45 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
-void	do_ra(t_list **pile_a, int i)
+void	do_ra(t_list **stack_a, int i)
 {
 	t_list	*temp;
 	t_list	*temp2;
 
-	if (!*pile_a || !(*pile_a)->nxt)
+	if (!*stack_a || !(*stack_a)->nxt)
 		return ;
-	temp = (*pile_a);
-	temp2 = (*pile_a)->nxt;
+	temp = (*stack_a);
+	temp2 = (*stack_a)->nxt;
 	while (temp->nxt)
 		temp = temp->nxt;
-	temp->nxt = *pile_a;
-	(*pile_a)->nxt = NULL;
-	*pile_a = temp2;
+	temp->nxt = *stack_a;
+	(*stack_a)->nxt = NULL;
+	*stack_a = temp2;
 	if (i == 0)
 		write(1, "ra\n", 3);
 }
 
-void	do_rb(t_list **pile_b, int i)
+void	do_rb(t_list **stack_b, int i)
 {
 	t_list	*temp;
 	t_list	*temp2;
 
-	if (!*pile_b || !(*pile_b)->nxt)
+	if (!*stack_b || !(*stack_b)->nxt)
 		return ;
-	temp = (*pile_b);
-	temp2 = (*pile_b)->nxt;
+	temp = (*stack_b);
+	temp2 = (*stack_b)->nxt;
 	while (temp->nxt)
 		temp = temp->nxt;
-	temp->nxt = *pile_b;
-	(*pile_b)->nxt = NULL;
-	*pile_b = temp2;
+	temp->nxt = *stack_b;
+	(*stack_b)->nxt = NULL;
+	*stack_b = temp2;
 	if (i == 0)
 		write(1, "rb\n", 3);
 }
 
-void	do_rr(t_list **pile_a, t_list **pile_b)
+void	do_rr(t_list **stack_a, t_list **stack_b)
 {
-	do_ra(pile_a, 1);
-	do_rb(pile_b, 1);
+	do_ra(stack_a, 1);
+	do_rb(stack_b, 1);
 	write(1, "rr\n", 3);
 }

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pile.c                                             :+:      :+:    :+:   */
+/*   stack.c                                             :+:      :+:    :+:  */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thlefebv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,31 +11,31 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
-void	stack(t_list **pile, int newvalue)
+void	stack(t_list **stack, int newvalue)
 {
-	t_list	*newpile;
+	t_list	*newstack;
 	t_list	*temp;
 
-	newpile = malloc(sizeof * newpile);
-	newpile->values = newvalue;
-	newpile->nxt = NULL;
-	if (pile == NULL)
+	newstack = malloc(sizeof * newstack);
+	newstack->values = newvalue;
+	newstack->nxt = NULL;
+	if (stack == NULL)
 		return ;
 	else
 	{
-		temp = (*pile);
+		temp = (*stack);
 		while (temp->nxt != NULL)
 			temp = temp->nxt;
-		temp->nxt = newpile;
+		temp->nxt = newstack;
 	}
-	pile = (*pile)->nxt;
+	stack = (*stack)->nxt;
 }
 
-void	afficher(t_list *pile)
+void	display(t_list *stack)
 {
 	t_list	*actuel;
 
-	actuel = pile;
+	actuel = stack;
 	while (actuel != NULL)
 	{
 		printf("%ld\n", actuel->values);
@@ -44,16 +44,16 @@ void	afficher(t_list *pile)
 	write(1, "\n", 1);
 }
 
-int	sort(t_list *pile_a)
+int	sort(t_list *stack_a)
 {
 	t_list	*swp;
 
-	while (pile_a && pile_a->nxt)
+	while (stack_a && stack_a->nxt)
 	{
-		swp = pile_a->nxt;
-		if (swp->values < pile_a->values)
+		swp = stack_a->nxt;
+		if (swp->values < stack_a->values)
 			return (0);
-		pile_a = pile_a->nxt;
+		stack_a = stack_a->nxt;
 	}
 	return (1);
 }

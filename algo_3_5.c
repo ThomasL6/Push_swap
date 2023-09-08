@@ -42,10 +42,10 @@ void	algo3(t_list **pile_a)
 		write(1, "sa\nrra\n", 7);
 	else if (mid->values > last->values && last->values > (*pile_a)->values)
 		write(1, "rra\nsa\n", 7);
-	else if (mid->values > (*pile_a)->values 
+	else if (mid->values > (*pile_a)->values
 		&& (*pile_a)->values > last->values)
 		write(1, "rra\n", 3);
-	else if (last->values > (*pile_a)->values 
+	else if (last->values > (*pile_a)->values
 		&& (*pile_a)->values > mid->values)
 		write(1, "sa\n", 3);
 	else if ((*pile_a)->values > last->values && last->values > mid->values)

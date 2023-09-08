@@ -13,8 +13,8 @@ NAME = push_swap
 
 FICHIERS_C = stack.c\
 	     push_swap.c\
-	     push_swap_utilis.c\
-	     utilis2.c\
+	     push_swap_utils.c\
+	     utils2.c\
 	     push.c\
 	     swap.c\
 	     rotate.c\

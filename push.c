@@ -11,28 +11,28 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
-void	do_pa(t_list **pile_a, t_list **pile_b)
+void	do_pa(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*tmp;
 
-	if (!*pile_b)
+	if (!*stack_b)
 		return ;
-	tmp = (*pile_b)->nxt;
-	(*pile_b)->nxt = *pile_a;
-	*pile_a = *pile_b;
-	*pile_b = tmp;
+	tmp = (*stack_b)->nxt;
+	(*stack_b)->nxt = *stack_a;
+	*stack_a = *stack_b;
+	*stack_b = tmp;
 	write(1, "pa\n", 3);
 }
 
-void	do_pb(t_list **pile_a, t_list **pile_b)
+void	do_pb(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*tmp;
 
-	if (!*pile_a)
+	if (!*stack_a)
 		return ;
-	tmp = (*pile_a)->nxt;
-	(*pile_a)->nxt = *pile_b;
-	*pile_b = *pile_a;
-	*pile_a = tmp;
+	tmp = (*stack_a)->nxt;
+	(*stack_a)->nxt = *stack_b;
+	*stack_b = *stack_a;
+	*stack_a = tmp;
 	write(1, "pb\n", 3);
 }

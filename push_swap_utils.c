@@ -103,12 +103,12 @@ void	verification(int arg, char **tab)
 	}
 }
 
-int	lst_size(t_list *pile)
+int	lst_size(t_list *stack)
 {
 	int		i;
 	t_list	*tmp;
 
-	tmp = pile;
+	tmp = stack;
 	i = 0;
 	while (tmp)
 	{

@@ -11,11 +11,11 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
-void	algo2(t_list **pile_a)
+void	algo2(t_list **stack_a)
 {
 	t_list	*last;
 
-	last = (*pile_a)->nxt;
-	if (last->values < (*pile_a)->values)
+	last = (*stack_a)->nxt;
+	if (last->values < (*stack_a)->values)
 		write(1, "ra\n", 3);
 }

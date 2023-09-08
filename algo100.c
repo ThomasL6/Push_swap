@@ -64,10 +64,10 @@ void	pile20(t_list **pile_a, t_list **pile_b, int min, int max)
 		j = lst_size(*pile_a) - 1;
 		while (lst_size(*pile_a) > 0)
 		{
-			if (run(i, min, max, *pile_a) == 1 
+			if (run(i, min, max, *pile_a) == 1
 				&& split_stack20(i, pile_a, pile_b, 0))
 				break ;
-			if (run(j, min, max, *pile_a) == 1 
+			if (run(j, min, max, *pile_a) == 1
 				&& split_stack20(j, pile_a, pile_b, 1))
 				break ;
 			i++;
