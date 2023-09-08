@@ -58,20 +58,24 @@ void	doubles(char **tab)
 	}
 }
 
-void	check(char **tab)
+int	check(char **tab)
 {
 	int	i;
+	int	j;
 
 	i = 1;
-	while (tab[i])
+	while (tab && tab[i] && tab[i + 1])
 	{
-		while (tab[i] < tab[i + 1])
+		j = i + 1;
+		while (tab[j])
 		{
-			if (tab[1][i] == '\0')
-				exit(0);
+			if (ft_atoil(tab[i]) > ft_atoil(tab[j]))
+				return (0);
+			j++;
 		}
 		i++;
 	}
+	return (1);
 }
 
 void	verification(int arg, char **tab)
