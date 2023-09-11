@@ -13,7 +13,6 @@
 # define PUSH_SWAP_H
 
 # include <unistd.h>
-# include <stdio.h>
 # include <stdlib.h>
 
 typedef struct s_list
@@ -22,16 +21,13 @@ typedef struct s_list
 	void		*nxt;
 }		t_list;
 
-t_list		*last_value(t_list *stack);
 long int	ft_atoil(const char *nptr);
 int			lst_size(t_list *stack);
 int			sort(t_list *stack_a);
 int			vmin(t_list *stack);
 int			vmax(t_list *stack);
-int			run(int i, int min, int max, t_list *stack);
 int			check(char **tab);
 void		stack(t_list **stack, int newvalue);
-void		display(t_list *stack);
 void		do_pa(t_list **stack_a, t_list **stack_b);
 void		do_pb(t_list **stack_a, t_list **stack_b);
 void		do_sa(t_list **stack_a, int i);
@@ -49,8 +45,6 @@ void		algo2(t_list **stack_a);
 void		algo3(t_list **stack_a);
 void		algo_5(t_list **stack_a, t_list **stack_b);
 void		algo100(t_list **stack_a, t_list **stack_b, int stacks);
-void		stack3(t_list **stack_a, t_list **stack_b);
-void		stack20(t_list **stack_a, t_list **stack_b, int min, int max);
 void		free_stack(t_list *stack);
 
 #endif

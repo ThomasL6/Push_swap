@@ -31,19 +31,6 @@ void	stack(t_list **stack, int newvalue)
 	stack = (*stack)->nxt;
 }
 
-void	display(t_list *stack)
-{
-	t_list	*actuel;
-
-	actuel = stack;
-	while (actuel != NULL)
-	{
-		printf("%ld\n", actuel->values);
-		actuel = actuel->nxt;
-	}
-	write(1, "\n", 1);
-}
-
 int	sort(t_list *stack_a)
 {
 	t_list	*swp;

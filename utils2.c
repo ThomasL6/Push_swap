@@ -72,15 +72,3 @@ int	vmax(t_list *pile)
 	}
 	return (p);
 }
-
-t_list	*last_value(t_list *pile)
-{
-	t_list	*swap;
-
-	swap = pile;
-	while (swap && swap->nxt)
-	{
-		swap = swap->nxt;
-	}
-	return (swap);
-}

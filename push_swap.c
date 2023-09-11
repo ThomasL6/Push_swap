@@ -11,58 +11,58 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
-void	alg_other(t_list **pile_a, t_list **pile_b)
+void	alg_other(t_list **stack_a, t_list **stack_b)
 {
 	int	p;
 
-	while (lst_size(*pile_a) > 0)
-		do_pb(pile_a, pile_b);
-	while (lst_size(*pile_b) > 0)
+	while (lst_size(*stack_a) > 0)
+		do_pb(stack_a, stack_b);
+	while (lst_size(*stack_b) > 0)
 	{
-		p = vmax(*pile_b);
+		p = vmax(*stack_b);
 		if (p == 0)
-			do_pa(pile_a, pile_b);
-		else if (p <= lst_size(*pile_b) / 2)
+			do_pa(stack_a, stack_b);
+		else if (p <= lst_size(*stack_b) / 2)
 		{
 			while (p-- > 0)
-				do_rb(pile_b, 0);
-			do_pa(pile_a, pile_b);
+				do_rb(stack_b, 0);
+			do_pa(stack_a, stack_b);
 		}
 		else
 		{
-			while (p++ < lst_size(*pile_b))
-				do_rrb(pile_b, 0);
-			do_pa(pile_a, pile_b);
+			while (p++ < lst_size(*stack_b))
+				do_rrb(stack_b, 0);
+			do_pa(stack_a, stack_b);
 		}
 	}
 }
 
-void	algorythm(t_list **pile_a, t_list **pile_b, int len)
+void	algorythm(t_list **stack_a, t_list **stack_b, int len)
 {
 	if (len == 1)
 		return ;
 	else if (len == 2)
-		algo2(pile_a);
+		algo2(stack_a);
 	else if (len == 3)
-		algo3(pile_a);
+		algo3(stack_a);
 	else if (len <= 5)
-		algo_5(pile_a, pile_b);
+		algo_5(stack_a, stack_b);
 	else if (len == 100)
-		algo100(pile_a, pile_b, 5);
+		algo100(stack_a, stack_b, 5);
 	else if (len == 500)
-		algo100(pile_a, pile_b, 11);
+		algo100(stack_a, stack_b, 11);
 	else
 	{
-		alg_other(pile_a, pile_b);
+		alg_other(stack_a, stack_b);
 	}
-	free_stack(*pile_a);
+	free_stack(*stack_a);
 }
 
 int	main(int arg, char **tab)
 {
 	int		i;
-	t_list	*pile_a;
-	t_list	*pile_b;
+	t_list	*stack_a;
+	t_list	*stack_b;
 
 	i = 2;
 	if (arg == 1)
@@ -70,17 +70,17 @@ int	main(int arg, char **tab)
 	else
 	{
 		verification(arg, tab);
-		pile_a = malloc(sizeof (t_list));
-		pile_a->values = ft_atoil(tab[1]);
-		pile_a->nxt = NULL;
-		pile_b = NULL;
+		stack_a = malloc(sizeof (t_list));
+		stack_a->values = ft_atoil(tab[1]);
+		stack_a->nxt = NULL;
+		stack_b = NULL;
 		while (i != arg)
-		{
-			stack(&pile_a, ft_atoil(tab[i]));
-			i++;
-		}
+			stack(&stack_a, ft_atoil(tab[i++]));
 		if (check(tab) == 1)
+		{
+			free_stack(stack_a);
 			return (0);
-		algorythm(&pile_a, &pile_b, lst_size(pile_a));
+		}
+		algorythm(&stack_a, &stack_b, lst_size(stack_a));
 	}
 }
